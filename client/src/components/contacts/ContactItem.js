@@ -5,14 +5,13 @@ import ContactContext from "../../context/contact/contactContext";
 const ContactItem = ({contact}) => {
   // These two const variables pull methods from ContactState>>ContactContext:
   const contactContext = useContext(ContactContext);
-  const {deleteContact, setCurrent, clearCurrent } = contactContext;
+  const {deleteContact, setCurrent } = contactContext;
 
-  const { id, name, email, phone, type } = contact;
+  const { _id, name, email, phone, type } = contact;
 
   const onDelete = () => {
     // each ContactItem is created via map. So each of THIS component is basically its own object instance of "contact" object array. That is how we're able to access (id) of specific deleted contact through global function variables.
-    deleteContact(id);
-    clearCurrent();
+    deleteContact(_id);
   };
 
   return (
