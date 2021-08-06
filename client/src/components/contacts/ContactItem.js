@@ -1,9 +1,18 @@
-import React from "react";
-import PropTypes from 'prop-types'
+import React, { useContext } from "react";
+import PropTypes from 'prop-types';
+import ContactContext from "../../context/contact/contactContext";
 
+const ContactItem = ({contact}) => {
+  const contactContext = useContext(ContactContext);
+  const {deleteContact} = contactContext;
 
-const ContactItem = ({ contact }) => {
   const { id, name, email, phone, type } = contact;
+
+  const onDelete = () => {
+    // each ContactItem is created via map. So each of THIS component is basically its own object instance of "contact" object array. That is how we're able to access (id) of specific deleted contact through global function variables.
+    console.log(contact)
+    deleteContact(id);
+  };
 
   return (
     <div className="card bg-light">
@@ -29,7 +38,7 @@ const ContactItem = ({ contact }) => {
       </ul>
       <p>
         <button className="btn btn-dark btn-sm">Edit</button>
-        <button className="btn btn-danger btn-sm">Delete</button>
+        <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
       </p>
     </div>
   );
@@ -38,4 +47,5 @@ const ContactItem = ({ contact }) => {
 ContactItem.propTypes = {
   contact: PropTypes.object.isRequired,
 };
+
 export default ContactItem;
