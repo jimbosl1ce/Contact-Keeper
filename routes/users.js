@@ -56,12 +56,17 @@ router.post(
         },
       };
 
-      jwt.sign(payload, config.get("jwtSecret"), {
-        expiresIn: 360000
-      }, (err, token) => {
-        if(err) throw err;
-        res.json({ token })
-      });
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        {
+          expiresIn: 360000,
+        },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server Error");
