@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactItem = ({contact}) => {
+  // These two const variables pull methods from ContactState>>ContactContext:
   const contactContext = useContext(ContactContext);
-  const {deleteContact} = contactContext;
+  const {deleteContact, setCurrent, clearCurrent } = contactContext;
 
   const { id, name, email, phone, type } = contact;
 
   const onDelete = () => {
     // each ContactItem is created via map. So each of THIS component is basically its own object instance of "contact" object array. That is how we're able to access (id) of specific deleted contact through global function variables.
-    console.log(contact)
     deleteContact(id);
+    clearCurrent();
   };
 
   return (
@@ -37,7 +38,7 @@ const ContactItem = ({contact}) => {
         </li>)}
       </ul>
       <p>
-        <button className="btn btn-dark btn-sm">Edit</button>
+        <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
         <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
       </p>
     </div>
