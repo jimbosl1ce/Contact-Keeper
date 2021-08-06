@@ -45,6 +45,7 @@ const ContactForm = () => {
     // If current is NOT null, we're updating a contact.
     } else {
       updateContact(contact);
+      clearCurrent();
     };
     // And this simply clears state.
     setContact({
