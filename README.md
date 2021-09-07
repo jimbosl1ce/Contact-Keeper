@@ -1,6 +1,6 @@
 # Contact Keeper MERN application
 
-Live demo: https://radiant-taiga-73695.herokuapp.com/register
+Live demo: https://radiant-taiga-73695.herokuapp.com/login
 
 public user:
 jdoe@gmail.com
