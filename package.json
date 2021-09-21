@@ -20,10 +20,10 @@
     "express": "^4.17.1",
     "express-validator": "^6.12.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.5"
+    "mongoose": "^5.13.9"
   },
   "devDependencies": {
     "codemon": "^0.1.31-development",
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.2.1"
   }
 }

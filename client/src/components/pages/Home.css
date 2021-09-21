@@ -1,0 +1,19 @@
+.form-card {
+  /* border: 1px solid black; */
+  box-shadow: 1px 1px 5px black;
+  border-radius: 9px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-card form input {
+  border: 1px solid black;
+  border-radius: 9px;
+  outline: yellow;
+}
+
+.form-card form input:focus {
+  border: 2px solid blue;
+  outline: none;
+  border-radius: 9px;
+}
