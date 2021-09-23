@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
+import Occasions from "./Occasions";
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
@@ -46,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-card">
+    <div>
       <form onSubmit={onSubmit}>
         <h2 className="text-primary">
           {current ? "Edit Contact" : "Add Contact"}
@@ -72,6 +73,9 @@ const ContactForm = () => {
           value={phone}
           onChange={onChange}
         />
+        <h5>Occasions</h5>
+        {/* Occasion Box */}
+        <Occasions />
         <h5>Contact Type</h5>
         <input
           type="radio"

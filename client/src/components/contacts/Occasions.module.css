@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  background: none;
+  border: 1px solid #333;
+  padding: 4px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: rgb(117, 117, 117);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: rgba(21, 57, 149, 0.153);
+  /* color: white; */
+}
+
+.active {
+  border: 1px solid rgb(21, 57, 149);
+  background: rgb(21, 57, 149);
+  color: white;
+}
