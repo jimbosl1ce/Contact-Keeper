@@ -84,7 +84,7 @@ const Upcoming = () => {
   }
 
   return isCollapsed ? (
-    <div onClick={expandHandler} className={classes["upcoming-container"]}>
+    <div onClick={expandHandler} className={`filter ${classes["upcoming-container"]}`}>
       <div className={classes.collapsed}>
         {count < 2 ? <h2>Notifications - There is {count} upcoming event</h2> : <h2>Notifications - There are {count} upcoming events</h2>}
 

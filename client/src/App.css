@@ -122,6 +122,11 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  box-shadow: 2px 2px 5px black;
+}
+
+.filter {
+  box-shadow: 2px 2px 5px black;
 }
 
 /* List */
