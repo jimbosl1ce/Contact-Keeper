@@ -134,6 +134,36 @@ const ContactForm = () => {
             Wedding Anniversary
           </button>
         </div>
+        {activeButton.birthday && (
+          <div className={classes["occasion-box"]}>
+            <p>Birthday:</p>
+            <input
+              className={classes.input}
+              type="date"
+              name="birthday"
+            ></input>
+          </div>
+        )}
+        {activeButton.workAnniversary && (
+          <div className={classes["occasion-box"]}>
+            <p>Work Anniversary:</p>
+            <input
+              className={classes.input}
+              type="date"
+              name="workAnniversary"
+            ></input>
+          </div>
+        )}
+        {activeButton.weddingAnniversary && (
+          <div className={classes["occasion-box"]}>
+            <p>Wedding Anniversary:</p>
+            <input
+              className={classes.input}
+              type="date"
+              name="weddingAnniversary"
+            ></input>
+          </div>
+        )}
         <h5>Contact Type</h5>
         <input
           type="radio"
