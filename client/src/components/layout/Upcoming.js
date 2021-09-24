@@ -1,9 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Spinner from "../layout/Spinner";
 import ContactContext from "../../context/contact/contactContext";
 import classes from "./Upcoming.module.css";
 
 const Upcoming = () => {
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const contactContext = useContext(ContactContext);
 
   const { contacts, getContacts, loading } = contactContext;
@@ -50,9 +52,31 @@ const Upcoming = () => {
     return Math.round(daysLeftDecimals * 100) / 1;
   };
 
+  const expandHandler = () => {
+    setIsCollapsed((prevState) => {
+      setIsCollapsed(!prevState);
+    });
+  };
+
   return (
-    <div className={classes["upcoming-container"]}>
-      <h2>Notifications</h2>
+    
+    isCollapsed ? (
+    <div onClick={expandHandler} className={classes["upcoming-container"]}>
+      <div className={classes.collapsed}>
+        <h2>Notifications</h2>
+        <span className={classes.span}>
+          <i class="far fa-plus-square"></i>
+        </span>
+      </div>
+    </div>
+  ) : (
+    <div onClick={expandHandler} className={classes["upcoming-container"]}>
+      <div className={classes.collapsed}>
+        <h2>Notifications</h2>
+        <span className={classes.span}>
+          <i class="far fa-minus-square"></i>
+        </span>
+      </div>
       <ul>
         {contacts !== null && !loading ? (
           contacts.map((contact) => {
@@ -101,7 +125,7 @@ const Upcoming = () => {
         )}
       </ul>
     </div>
-  );
+  ));
 };
 
 export default Upcoming;

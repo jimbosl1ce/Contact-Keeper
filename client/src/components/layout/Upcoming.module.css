@@ -4,3 +4,13 @@
   padding: 10px;
   color: white;
 }
+
+.collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  font-size: 2rem;
+}
