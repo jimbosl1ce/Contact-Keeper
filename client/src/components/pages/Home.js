@@ -3,6 +3,7 @@ import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import ContactFilter from "../contacts/ContactFilter";
 import AuthContext from "../../context/auth/authContext";
+import Upcoming from "../layout/Upcoming";
 import "./Home.css";
 
 const Home = () => {
@@ -14,6 +15,8 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+      <Upcoming />
     <div className="grid-2">
       <div className="form-card">
         <ContactForm />
@@ -23,6 +26,7 @@ const Home = () => {
         <Contacts />
       </div>
     </div>
+    </>
   );
 };
 

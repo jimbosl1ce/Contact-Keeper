@@ -20,9 +20,8 @@ const ContactItem = ({ contact }) => {
 
   const onDelete = () => {
     // each ContactItem is created via map. So each of THIS component is basically its own object instance of "contact" object array. That is how we're able to access (id) of specific deleted contact through global function variables.
-    
-      deleteContact(_id);
 
+    deleteContact(_id);
   };
 
   const formatDate = (dateToFormat) =>
@@ -49,7 +48,10 @@ const ContactItem = ({ contact }) => {
       <ul className="list">
         {email && (
           <li>
-            <i className="fas fa-envelope-open"></i> {email}
+            <i className="fas fa-envelope-open"></i>
+            <a target="_blank" href={`mailto: ${email}`}>
+              {email}
+            </a>
           </li>
         )}
         {phone && (
@@ -57,22 +59,12 @@ const ContactItem = ({ contact }) => {
             <i className="fas fa-phone"></i> {phone}
           </li>
         )}
-        {birthday && (
-          <li>
-            Birthday: {formatDate(birthday)}
-          </li>
-        )}
+        {birthday && <li>Birthday: {formatDate(birthday)}</li>}
         {workAnniversary && (
-          <li>
-            Work Anniversary:{" "}
-            {formatDate(workAnniversary)}
-          </li>
+          <li>Work Anniversary: {formatDate(workAnniversary)}</li>
         )}
         {weddingAnniversary && (
-          <li>
-            Wedding Anniversary: {" "}
-            {formatDate(weddingAnniversary)}
-          </li>
+          <li>Wedding Anniversary: {formatDate(weddingAnniversary)}</li>
         )}
       </ul>
       <p>
