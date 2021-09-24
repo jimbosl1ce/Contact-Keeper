@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
-import Occasions from "./Occasions";
+import classes from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
@@ -16,6 +16,7 @@ const ContactForm = () => {
         email: "",
         phone: "",
         type: "personal",
+        occasion: [],
       });
     }
   }, [contactContext, current]);
@@ -25,12 +26,19 @@ const ContactForm = () => {
     email: "",
     phone: "",
     type: "personal",
+    occasion: [],
+  });
+  const [activeButton, setActiveButton] = useState({
+    birthday: false,
+    workAnniversary: false,
+    weddingAnniversary: false,
   });
 
-  const { name, email, phone, type } = contact;
+  const { name, email, phone, type, occasion } = contact;
 
   const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
+  console.log(contact);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +48,32 @@ const ContactForm = () => {
       updateContact(contact);
     }
     clearAll();
+  };
+
+  const isActiveHandler = (e) => {
+    e.preventDefault();
+    // setContact({
+    //   ...contact,
+    //   occasion: ["hi"],
+    // });
+    if (e.target.innerText === "Birthday") {
+      setActiveButton((prevState) => {
+        return { ...prevState, birthday: !prevState.birthday };
+      });
+    } else if (e.target.innerText === "Work Anniversary") {
+      setActiveButton((prevState) => {
+        return { ...prevState, workAnniversary: !prevState.workAnniversary };
+      });
+    } else if (e.target.innerText === "Wedding Anniversary") {
+      setActiveButton((prevState) => {
+        return {
+          ...prevState,
+          weddingAnniversary: !prevState.weddingAnniversary,
+        };
+      });
+    }
+
+    console.log(e.target.innerText);
   };
 
   const clearAll = () => {
@@ -74,8 +108,32 @@ const ContactForm = () => {
           onChange={onChange}
         />
         <h5>Occasions</h5>
-        {/* Occasion Box */}
-        <Occasions />
+        <div className={classes.container}>
+          <button
+            onClick={isActiveHandler}
+            className={`${classes.btn} ${
+              activeButton.birthday ? classes.active : ""
+            }`}
+          >
+            Birthday
+          </button>
+          <button
+            onClick={isActiveHandler}
+            className={`${classes.btn} ${
+              activeButton.workAnniversary ? classes.active : ""
+            }`}
+          >
+            Work Anniversary
+          </button>
+          <button
+            onClick={isActiveHandler}
+            className={`${classes.btn} ${
+              activeButton.weddingAnniversary ? classes.active : ""
+            }`}
+          >
+            Wedding Anniversary
+          </button>
+        </div>
         <h5>Contact Type</h5>
         <input
           type="radio"
