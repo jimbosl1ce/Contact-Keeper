@@ -18,7 +18,7 @@ const ContactForm = () => {
         type: "personal",
         birthday: "",
         workAnniversary: "",
-        weddingAnniversary: ""
+        weddingAnniversary: "",
       });
     }
   }, [contactContext, current]);
@@ -38,7 +38,15 @@ const ContactForm = () => {
     weddingAnniversary: false,
   });
 
-  const { name, email, phone, type, birthday, workAnniversary, weddingAnniversary } = contact;
+  const {
+    name,
+    email,
+    phone,
+    type,
+    birthday,
+    workAnniversary,
+    weddingAnniversary,
+  } = contact;
 
   const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -77,6 +85,11 @@ const ContactForm = () => {
   };
 
   const clearAll = () => {
+    setActiveButton({
+      birthday: false,
+      workAnniversary: false,
+      weddingAnniversary: false,
+    });
     clearCurrent();
   };
 
