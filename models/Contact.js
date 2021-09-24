@@ -25,6 +25,12 @@ const ContactSchema = mongoose.Schema({
   birthday: {
     type: Date,
   },
+  workAnniversary: {
+    type: Date,
+  },
+  weddingAnniversary: {
+    type: Date,
+  },
   date: {
     type: Date,
     default: Date.now,

@@ -17,6 +17,8 @@ const ContactForm = () => {
         phone: "",
         type: "personal",
         birthday: "",
+        workAnniversary: "",
+        weddingAnniversary: ""
       });
     }
   }, [contactContext, current]);
@@ -27,6 +29,8 @@ const ContactForm = () => {
     phone: "",
     type: "personal",
     birthday: "",
+    workAnniversary: "",
+    weddingAnniversary: "",
   });
   const [activeButton, setActiveButton] = useState({
     birthday: false,
@@ -34,7 +38,7 @@ const ContactForm = () => {
     weddingAnniversary: false,
   });
 
-  const { name, email, phone, type, birthday } = contact;
+  const { name, email, phone, type, birthday, workAnniversary, weddingAnniversary } = contact;
 
   const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -52,10 +56,7 @@ const ContactForm = () => {
 
   const isActiveHandler = (e) => {
     e.preventDefault();
-    // setContact({
-    //   ...contact,
-    //   occasion: ["hi"],
-    // });
+    // Highlights btns & displays birthday inputs if true
     if (e.target.innerText === "Birthday") {
       setActiveButton((prevState) => {
         return { ...prevState, birthday: !prevState.birthday };
@@ -153,6 +154,8 @@ const ContactForm = () => {
               className={classes.input}
               type="date"
               name="workAnniversary"
+              value={workAnniversary}
+              onChange={onChange}
             ></input>
           </div>
         )}
@@ -163,6 +166,8 @@ const ContactForm = () => {
               className={classes.input}
               type="date"
               name="weddingAnniversary"
+              value={weddingAnniversary}
+              onChange={onChange}
             ></input>
           </div>
         )}
