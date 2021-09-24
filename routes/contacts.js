@@ -33,7 +33,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, phone, type, occasion } = req.body;
+    const { name, email, phone, type, birthday } = req.body;
 
     try {
       const newContact = new Contact({
@@ -41,7 +41,7 @@ router.post(
         email,
         phone,
         type,
-        occasion,
+        birthday,
         user: req.user.id,
       });
 

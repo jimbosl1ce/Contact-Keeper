@@ -22,9 +22,8 @@ const ContactSchema = mongoose.Schema({
     type: String,
     default: "Personal",
   },
-  occasion: {
-    type: Array,
-    default: [],
+  birthday: {
+    type: Date,
   },
   date: {
     type: Date,

@@ -16,7 +16,7 @@ const ContactForm = () => {
         email: "",
         phone: "",
         type: "personal",
-        occasion: [],
+        birthday: "",
       });
     }
   }, [contactContext, current]);
@@ -26,7 +26,7 @@ const ContactForm = () => {
     email: "",
     phone: "",
     type: "personal",
-    occasion: [],
+    birthday: "",
   });
   const [activeButton, setActiveButton] = useState({
     birthday: false,
@@ -34,7 +34,7 @@ const ContactForm = () => {
     weddingAnniversary: false,
   });
 
-  const { name, email, phone, type, occasion } = contact;
+  const { name, email, phone, type, birthday } = contact;
 
   const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -141,6 +141,8 @@ const ContactForm = () => {
               className={classes.input}
               type="date"
               name="birthday"
+              value={birthday}
+              onChange={onChange}
             ></input>
           </div>
         )}
