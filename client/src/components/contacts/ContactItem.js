@@ -49,7 +49,8 @@ const ContactItem = ({ contact }) => {
         {email && (
           <li>
             <i className="fas fa-envelope-open"></i>
-            <a target="_blank" href={`mailto: ${email}`}>
+            <a target="_blank" rel="noreferrer" href={`mailto: ${email}`}>
+              {"  "}
               {email}
             </a>
           </li>
