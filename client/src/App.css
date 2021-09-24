@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
 :root {
@@ -16,20 +16,29 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  height: 100vh;
 }
 
 a {
+  margin: 0 1rem;
   color: var(--primary-color);
   text-decoration: none;
+  transition: 0.5s;
+  border-color: var(--primary-color) 2px solid;
+  border-radius: 9px;
 }
 
 a:hover {
-  color: #666;
+  /* transition: 0.5s; */
+  /* border: 2px solid white; */
+  /* border-radius: 9px; */
+  background: white;
+  color: #333 !important;
 }
 
 ul {
@@ -41,11 +50,29 @@ img {
 }
 
 /* Utilities */
+#root {
+  height: 100%;
+}
+.main-container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .container {
+  padding-top: 1.3rem;
+  width: 100%;
+  height: calc(100vh - 74.29px);
+  /* margin: auto; */
+  overflow: hidden;
+  /* padding: 0 2rem; */
+}
+.inner-container {
   max-width: 1100px;
   margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
+  width: 100%;
 }
 
 /* Text Styles*/
@@ -304,10 +331,10 @@ input {
   color: #888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
 select,
 textarea {
   display: block;
@@ -317,7 +344,7 @@ textarea {
   border: 1px solid #ccc;
 }
 
-input[type='submit'],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -363,7 +390,6 @@ table th {
   width: 100%;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
-  margin-bottom: 1rem;
 }
 
 .navbar ul {
@@ -373,7 +399,6 @@ table th {
 .navbar a {
   color: #fff;
   padding: 0.45rem;
-  margin: 0 0.25rem;
 }
 
 .navbar a:hover {

@@ -3,3 +3,11 @@
   box-shadow: 2px 2px 5px black;
   border-radius: 9px;
 }
+.login {
+  background: white;
+}
+.img {
+  background-image: url(./background1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -25,16 +25,18 @@ const App = () => {
         <AlertState>
           <Router>
             <Fragment>
-              <Navbar />
-              <div className="container">
-                <Alerts />
+              <div className="main-container">
+                <Navbar />
 
-                <Switch>
-                  <PrivateRoute exact path="/" component={Home} />
-                  <Route exact path="/about" component={About} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={Login} />
-                </Switch>
+
+                    <Alerts />
+
+                    <Switch>
+                      <PrivateRoute exact path="/" component={Home} />
+                      <Route exact path="/about" component={About} />
+                      <Route exact path="/register" component={Register} />
+                      <Route exact path="/login" component={Login} />
+                    </Switch>
               </div>
             </Fragment>
           </Router>

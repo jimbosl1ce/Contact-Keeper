@@ -1,5 +1,6 @@
 .form-card {
   /* border: 1px solid black; */
+  background-color: white;
   box-shadow: 1px 1px 5px black;
   border-radius: 9px;
   margin: 19.2px 0;
@@ -13,7 +14,14 @@
 }
 
 .form-card form input:focus {
+  background-color: white !important;
   border: 2px solid blue;
   outline: none;
   border-radius: 9px;
+}
+
+.main-bk {
+  background-image: url(./main-bk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

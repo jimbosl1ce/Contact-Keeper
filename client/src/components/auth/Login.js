@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
 import AlertContext from "../../context/alert/alertContext";
-import './Login.css'
+import "./Login.css";
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -40,43 +40,47 @@ const Login = (props) => {
     } else {
       login({
         email,
-        password
-      })
+        password,
+      });
     }
   };
 
   return (
-    <div className="form-container">
-      <h1>
-        Account <span className="text-primary">Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
-          />
+    <div className="container img">
+      <div className="inner-container">
+        <div className="form-container login">
+          <h1>
+            Account <span className="text-primary">Login</span>
+          </h1>
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <input
+              type="submit"
+              value="Login"
+              className="btn btn-primary btn-block"
+            />
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <input
-          type="submit"
-          value="Login"
-          className="btn btn-primary btn-block"
-        />
-      </form>
+      </div>
     </div>
   );
 };

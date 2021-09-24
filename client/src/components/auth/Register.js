@@ -53,6 +53,8 @@ const Register = (props) => {
   };
 
   return (
+    <div className="container">
+    <div className="inner-container">
     <div className="form-container">
       <h1>
         Account <span className="text-primary">Register</span>
@@ -93,6 +95,8 @@ const Register = (props) => {
           className="btn btn-primary btn-block"
         />
       </form>
+    </div>
+    </div>
     </div>
   );
 };
