@@ -19,11 +19,11 @@ Live demo: https://radiant-taiga-73695.herokuapp.com/login
 npm install
 ```
 
-## Setup
+## ✔️: Setup
 * If you'd like you use your own MongoDB instance, connect it via a Mongo URI in /config/default.json
 * JWT is fine left as 'secret'
 
-## Demo login
+## ✔️: Demo login
 public user:
 jdoe@gmail.com
 123456
