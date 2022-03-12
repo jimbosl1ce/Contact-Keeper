@@ -2,7 +2,7 @@
 
 ![Screenshot](https://im5.ezgif.com/tmp/ezgif-5-10ed76cb65.gif)
 
-Live demo: https://radiant-taiga-73695.herokuapp.com/login
+[Live demo](https://jdh-contactkeeper.herokuapp.com/login)
 
 ## :heavy_check_mark: Features
 
