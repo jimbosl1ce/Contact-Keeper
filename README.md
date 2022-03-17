@@ -1,7 +1,5 @@
 # Contact Keeper MERN application
 
-![Screenshot](https://im5.ezgif.com/tmp/ezgif-5-10ed76cb65.gif)
-
 [Live demo](https://jdh-contactkeeper.herokuapp.com/login)
 
 ## :heavy_check_mark: Features
