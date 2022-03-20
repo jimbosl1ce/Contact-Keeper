@@ -95,118 +95,119 @@ const ContactForm = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <h2 className="text-primary">
-          {current ? "Edit Contact" : "Add Contact"}
-        </h2>
-        <input
-          type="text"
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={onChange}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={email}
-          onChange={onChange}
-        />
-        <input
-          type="text"
-          placeholder="Phone"
-          name="phone"
-          value={phone}
-          onChange={onChange}
-        />
-        <h5>Occasions</h5>
-        <div className={classes.container}>
-          <button
-            onClick={isActiveHandler}
-            className={`${classes.btn} ${
-              activeButton.birthday ? classes.active : ""
-            }`}
-          >
-            Birthday
-          </button>
-          <button
-            onClick={isActiveHandler}
-            className={`${classes.btn} ${
-              activeButton.workAnniversary ? classes.active : ""
-            }`}
-          >
-            Work Anniversary
-          </button>
-          <button
-            onClick={isActiveHandler}
-            className={`${classes.btn} ${
-              activeButton.weddingAnniversary ? classes.active : ""
-            }`}
-          >
-            Wedding Anniversary
-          </button>
+      <form className={classes.form} onSubmit={onSubmit}>
+        <div className="form-inputs">
+          <h2 className="text-primary">
+            {current ? "Edit Contact" : "Add Contact"}
+          </h2>
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={name}
+            onChange={onChange}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={email}
+            onChange={onChange}
+          />
+          <input
+            type="text"
+            placeholder="Phone"
+            name="phone"
+            value={phone}
+            onChange={onChange}
+          />
+          <h5>Occasions</h5>
+          <div className={classes.container}>
+            <button
+              onClick={isActiveHandler}
+              className={`${classes.btn} ${
+                activeButton.birthday ? classes.active : ""
+              }`}
+            >
+              Birthday
+            </button>
+            <button
+              onClick={isActiveHandler}
+              className={`${classes.btn} ${
+                activeButton.workAnniversary ? classes.active : ""
+              }`}
+            >
+              Work Anniversary
+            </button>
+            <button
+              onClick={isActiveHandler}
+              className={`${classes.btn} ${
+                activeButton.weddingAnniversary ? classes.active : ""
+              }`}
+            >
+              Wedding Anniversary
+            </button>
+          </div>
+          {activeButton.birthday && (
+            <div className={classes["occasion-box"]}>
+              <p>Birthday:</p>
+              <input
+                className={classes.input}
+                type="date"
+                name="birthday"
+                value={birthday}
+                onChange={onChange}
+              ></input>
+            </div>
+          )}
+          {activeButton.workAnniversary && (
+            <div className={classes["occasion-box"]}>
+              <p>Work Anniversary:</p>
+              <input
+                className={classes.input}
+                type="date"
+                name="workAnniversary"
+                value={workAnniversary}
+                onChange={onChange}
+              ></input>
+            </div>
+          )}
+          {activeButton.weddingAnniversary && (
+            <div className={classes["occasion-box"]}>
+              <p>Wedding Anniversary:</p>
+              <input
+                className={classes.input}
+                type="date"
+                name="weddingAnniversary"
+                value={weddingAnniversary}
+                onChange={onChange}
+              ></input>
+            </div>
+          )}
+          <h5>Contact Type</h5>
+          <input
+            type="radio"
+            name="type"
+            value="personal"
+            checked={type === "personal"}
+            onChange={onChange}
+          />{" "}
+          Personal{" "}
+          <input
+            type="radio"
+            name="type"
+            value="professional"
+            checked={type === "professional"}
+            onChange={onChange}
+          />{" "}
+          Professional
         </div>
-        {activeButton.birthday && (
-          <div className={classes["occasion-box"]}>
-            <p>Birthday:</p>
-            <input
-              className={classes.input}
-              type="date"
-              name="birthday"
-              value={birthday}
-              onChange={onChange}
-            ></input>
-          </div>
-        )}
-        {activeButton.workAnniversary && (
-          <div className={classes["occasion-box"]}>
-            <p>Work Anniversary:</p>
-            <input
-              className={classes.input}
-              type="date"
-              name="workAnniversary"
-              value={workAnniversary}
-              onChange={onChange}
-            ></input>
-          </div>
-        )}
-        {activeButton.weddingAnniversary && (
-          <div className={classes["occasion-box"]}>
-            <p>Wedding Anniversary:</p>
-            <input
-              className={classes.input}
-              type="date"
-              name="weddingAnniversary"
-              value={weddingAnniversary}
-              onChange={onChange}
-            ></input>
-          </div>
-        )}
-        <h5>Contact Type</h5>
-        <input
-          type="radio"
-          name="type"
-          value="personal"
-          checked={type === "personal"}
-          onChange={onChange}
-        />{" "}
-        Personal{" "}
-        <input
-          type="radio"
-          name="type"
-          value="professional"
-          checked={type === "professional"}
-          onChange={onChange}
-        />{" "}
-        Professional
         <div>
           <input
             type="submit"
             value={current ? "Update Contact" : "Add Contact"}
             className="btn btn-primary btn-block"
           />
-        </div>
         {current && (
           <div>
             <button className="btn btn-light btn-block" onClick={clearAll}>
@@ -214,6 +215,7 @@ const ContactForm = () => {
             </button>
           </div>
         )}
+        </div>
       </form>
     </div>
   );

@@ -1,10 +1,12 @@
 .form-card {
   /* border: 1px solid black; */
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.762);
   box-shadow: 1px 1px 5px black;
   border-radius: 9px;
   margin: 19.2px 0;
   padding: 10px;
+  flex-grow: 0;
+  height: 760px;
 }
 
 .form-card form input {

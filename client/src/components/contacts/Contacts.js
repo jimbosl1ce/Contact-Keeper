@@ -4,6 +4,8 @@ import ContactItem from './ContactItem';
 import Spinner from '../layout/Spinner';
 import ContactContext from '../../context/contact/contactContext';
 
+import classes from './Contacts.module.css';
+
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
 
@@ -20,6 +22,7 @@ const Contacts = () => {
 
   return (
     <Fragment>
+      <div className={classes.overflow}>
       {contacts !== null && !loading ? (
         <TransitionGroup>
           {filtered !== null
@@ -45,6 +48,7 @@ const Contacts = () => {
       ) : (
         <Spinner />
       )}
+      </div>
     </Fragment>
   );
 };

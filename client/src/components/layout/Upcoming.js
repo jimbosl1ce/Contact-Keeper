@@ -86,7 +86,8 @@ const Upcoming = () => {
   return isCollapsed ? (
     <div onClick={expandHandler} className={`filter ${classes["upcoming-container"]}`}>
       <div className={classes.collapsed}>
-        {count < 2 ? <h2>Notifications - There is {count} upcoming event</h2> : <h2>Notifications - There are {count} upcoming events</h2>}
+        {(count === 1) && <h2>Notifications - There is {count} upcoming event</h2>}
+        {(count !== 1) && <h2>Notifications - There are {count} upcoming events</h2>}
 
         <span className={classes.span}>
           <i className="far fa-plus-square"></i>
