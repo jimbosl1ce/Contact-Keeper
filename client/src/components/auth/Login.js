@@ -83,6 +83,8 @@ const Login = (props) => {
               className="btn btn-primary btn-block"
             />
           </form>
+          <p>Demo login: jdoe@gmail.com</p>
+          <p>Demo password: 123456</p>
         </div>
       </div>
     </div>
