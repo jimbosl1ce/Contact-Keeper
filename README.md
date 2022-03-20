@@ -5,16 +5,12 @@
 [Live demo](https://peaceful-sierra-02300.herokuapp.com/login)
 
 ## :heavy_check_mark: Features
-
-### Product Overview
-
 * Organize contacts by personal and professional networks
 * Add annually recurring occasions, such as work & wedding anniversaries, or birthdays
 * UI displays upcoming events by contact
 * React | React Bootstrap | MongoDB
 
 ## ✔️: Installation
-
 ```
 npm install
 ```
