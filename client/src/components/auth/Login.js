@@ -8,11 +8,15 @@ const Login = (props) => {
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { login, error, clearErrors, isAuthenticated } = authContext;
+  const { login, logout, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
+    if (props.history.location.pathname === '/login' && props.history.action !== 'REPLACE') {
+      logout();
+    }
+
     if (isAuthenticated) {
-      props.history.push("/");
+    props.history.push("/");
     }
 
     if (error === "Invalid Credentials") {

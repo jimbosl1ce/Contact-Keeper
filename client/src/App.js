@@ -28,7 +28,6 @@ const App = () => {
               <div className="main-container">
                 <Navbar />
 
-
                     <Alerts />
 
                     <Switch>
