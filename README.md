@@ -2,8 +2,6 @@
 
 ![ezgif-1-53f2495ce1](https://user-images.githubusercontent.com/43115008/159174919-b287eb43-6763-4859-83b7-cf4080ecd748.gif)
 
-[Live demo](https://peaceful-sierra-02300.herokuapp.com/login)
-
 ## :heavy_check_mark: Features
 * Organize contacts by personal and professional networks
 * Add annually recurring occasions, such as work & wedding anniversaries, or birthdays
